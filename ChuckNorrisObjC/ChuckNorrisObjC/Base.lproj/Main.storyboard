@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AmQ-1c-dxN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Categories-->
+        <scene sceneID="I8f-y7-VVU">
+            <objects>
+                <tableViewController title="Categories" id="uYl-5O-noE" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xMF-Rz-9Wh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xfQ-Xk-1Oz">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xfQ-Xk-1Oz" id="eA8-7K-umK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uYl-5O-noE" id="Oed-lR-uU9"/>
+                            <outlet property="delegate" destination="uYl-5O-noE" id="vpa-qc-60r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ff1-YV-IDg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yT9-c6-ge4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092.753623188406" y="3.3482142857142856"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="lgs-Sv-iqT">
+            <objects>
+                <viewController storyboardIdentifier="detailSegue" id="ZJO-pw-Pt6" customClass="DetailViewController" customModule="ChuckNorrisObjC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PIp-iC-dAp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-2W-LEt">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chucknorris" translatesAutoresizingMaskIntoConstraints="NO" id="pJe-1U-bWZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="438"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbO-By-Vct">
+                                        <rect key="frame" x="0.0" y="493.5" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkQ-uJ-hB3">
+                                        <rect key="frame" x="0.0" y="718" width="374" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.3705557585" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="GNV-Cg-elU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Give me more CHUCK!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reloadJoke:" destination="ZJO-pw-Pt6" eventType="touchUpInside" id="VB1-bX-W7X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bEH-2W-LEt" firstAttribute="top" secondItem="BW5-p9-0mc" secondAttribute="top" id="2rM-pJ-dfg"/>
+                            <constraint firstItem="BW5-p9-0mc" firstAttribute="bottom" secondItem="bEH-2W-LEt" secondAttribute="bottom" id="6re-QL-fZZ"/>
+                            <constraint firstItem="bEH-2W-LEt" firstAttribute="leading" secondItem="BW5-p9-0mc" secondAttribute="leading" constant="20" id="fCz-Yh-yCg"/>
+                            <constraint firstItem="BW5-p9-0mc" firstAttribute="trailing" secondItem="bEH-2W-LEt" secondAttribute="trailing" constant="20" id="pjA-Qa-3fd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BW5-p9-0mc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Wl-QE-53V"/>
+                    <connections>
+                        <outlet property="jokeLabel" destination="WbO-By-Vct" id="CGm-Ah-rxa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PlM-v6-67f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1975" y="3"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dnA-sh-JSp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AmQ-1c-dxN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ol-Zs-cMJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uYl-5O-noE" kind="relationship" relationship="rootViewController" id="su6-1o-21o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frg-nG-JNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182.60869565217394" y="3.3482142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chucknorris" width="720" height="438"/>
+    </resources>
+</document>
